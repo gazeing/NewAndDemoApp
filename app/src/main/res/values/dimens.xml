@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_heading">18sp</dimen>
+    <dimen name="big_space">16dp</dimen>
+    <dimen name="small_space">4dp</dimen>
+    <dimen name="card_elevation">8dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+</resources>
