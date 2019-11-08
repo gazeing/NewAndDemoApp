@@ -42,8 +42,10 @@ android {
 //        unitTests.returnDefaultValues = true
         execution 'ANDROIDX_TEST_ORCHESTRATOR'
         unitTests {
+            returnDefaultValues = true
             includeAndroidResources = true
         }
+        animationsDisabled = true
     }
 }
 
@@ -77,13 +79,22 @@ dependencies {
     implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
     implementation 'com.squareup.okhttp3:logging-interceptor:3.14.2'
 
-    //dagger
-    implementation "com.google.dagger:dagger:$dagger2_version"
-    kapt "com.google.dagger:dagger-compiler:$dagger2_version"
-    implementation "com.google.dagger:dagger-android:$dagger2_version"
-    implementation "com.google.dagger:dagger-android-support:$dagger2_version"
-    // if you use the support libraries
-    kapt "com.google.dagger:dagger-android-processor:$dagger2_version"
+//    //dagger
+//    implementation "com.google.dagger:dagger:$dagger2_version"
+//    kapt "com.google.dagger:dagger-compiler:$dagger2_version"
+//    implementation "com.google.dagger:dagger-android:$dagger2_version"
+//    implementation "com.google.dagger:dagger-android-support:$dagger2_version"
+//    // if you use the support libraries
+//    kapt "com.google.dagger:dagger-android-processor:$dagger2_version"
+
+    // Koin for Android
+    implementation "org.koin:koin-android:$koin_version"
+    // Koin AndroidX Scope features
+    implementation "org.koin:koin-androidx-scope:$koin_version"
+    // Koin AndroidX ViewModel features
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+    // Koin AndroidX Experimental features
+    implementation "org.koin:koin-androidx-ext:$koin_version"
 
     // RXJAVA2
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
@@ -103,8 +114,10 @@ dependencies {
     testImplementation 'androidx.test:runner:1.2.0'
     testImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     testImplementation 'org.robolectric:robolectric:4.3'
-    kaptTest "com.google.dagger:dagger:$dagger2_version"
-    testImplementation "com.google.dagger:dagger:$dagger2_version"
+    testImplementation "org.koin:koin-test:$koin_version"
+    testImplementation 'com.agoda.kakao:kakao:2.1.0'
+//    kaptTest "com.google.dagger:dagger:$dagger2_version"
+//    testImplementation "com.google.dagger:dagger:$dagger2_version"
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestUtil 'androidx.test:orchestrator:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
