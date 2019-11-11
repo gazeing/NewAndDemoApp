@@ -1,0 +1,250 @@
+[ {
+  "description" : "在冷冷的冬天里捧着热热的关东煮边走边吃的感觉，不会很油腻却有很大的满足感。其实“关东煮”就是日本关东的熬点（おでん，最原始的汉字是“御田”）。不过我们更熟悉的称呼还是“关东煮”啦，这个名字其实也蛮贴切的。",
+  "material" : [ {
+    "measureWord" : "大勺",
+    "name" : "米酒",
+    "quantity" : 5
+  }, {
+    "measureWord" : "大勺",
+    "name" : "味啉",
+    "quantity" : 5
+  }, {
+    "measureWord" : "大勺",
+    "name" : "生抽",
+    "quantity" : 5
+  }, {
+    "measureWord" : "块",
+    "name" : "日式年糕",
+    "quantity" : 2
+  }, {
+    "measureWord" : "个",
+    "name" : "油豆腐",
+    "quantity" : 2
+  }, {
+    "measureWord" : "小段",
+    "name" : "葱白",
+    "quantity" : 1
+  }, {
+    "measureWord" : "朵",
+    "name" : "香菇",
+    "quantity" : 1
+  }, {
+    "measureWord" : "g",
+    "name" : "蟹味菇",
+    "quantity" : 20
+  }, {
+    "measureWord" : "g",
+    "name" : "木鱼花",
+    "quantity" : 20
+  }, {
+    "measureWord" : "cm",
+    "name" : "昆布",
+    "quantity" : 10
+  } ],
+  "receipeOrder" : 1,
+  "steps" : [ {
+    "description" : "在冷水锅里下入昆布，待水烧开后捞出待用",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick3mcTTZEgVO20ZCqw3c5ibfPCDjCaMZKBWKkHS14agQklQ2BaSeKSMzeJyHNJIKFiapc99ia1dgFlhyA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 1
+  }, {
+    "description" : "下入木鱼花小火煮2、3分钟，再用细筛网滤出日式高汤",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick3mcTTZEgVO20ZCqw3c5ibfPjeyfGL1VZVOQINGWouqv2evOLSeGsIvaS3MlVUYwgibjHJv0WseH5IQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 2
+  }, {
+    "description" : "在日式高汤中调入生抽/日式酱油、味啉和米酒后煮沸",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick3mcTTZEgVO20ZCqw3c5ibfPr0GDYSdbkCvwZpHHhia8GBs5fPfBT1UADoB5W89bphMic3mrxrYN88vA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 3
+  }, {
+    "description" : "日式油豆腐在沸水中汆一下，吸干水分再一切二",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick3mcTTZEgVO20ZCqw3c5ibfP0RaETF5NWNYfvLx2PfbPUqEs9H4LCgYViaapR0kwAWj18JD9ldic79YQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 4
+  }, {
+    "description" : "白萝卜切厚段后去皮",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick3mcTTZEgVO20ZCqw3c5ibfPjBp6QmOsrFgtHqO89EpImUOnvW6eeticCDjQdbFicx0QcmGIuz49jh8g/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 5
+  }, {
+    "description" : "将白萝卜和白煮蛋放入高汤中先煮着，再把魔芋块和豆腐过水后加入高汤中",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick3mcTTZEgVO20ZCqw3c5ibfPz6s2UHib8XjTDML5T1jYKmFw2w1z6h9ornjO7iaJh11ICN28Z68DVGGg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 6
+  }, {
+    "description" : "将所有食材按照容易煮熟的程度先后下入高汤中，最后放入福袋。福袋煮过后里面的年糕会变得软软的很入味，强烈建议大家做着试试看~   ",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick3mcTTZEgVO20ZCqw3c5ibfPSBorbKv4OS5rlQTibp6CflvNial9bXcWQZIy95WbNAY8m86r1bFZ0TVA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 7
+  }, {
+    "description" : "等所有食材煮到变软和入味就OK啦！",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick3mcTTZEgVO20ZCqw3c5ibfPwY7lpL1q5dAp8fgm3OWaq2Z1cBKCWWTAYTRLjfaYl0NJbBI89vJ6jQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 8
+  } ],
+  "thumbImage" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick1GueiaWqt8syqQ0Xyyib7ow5msIsLbYA0JBj32IhGI7s8ib5o9Diasn3jRvhujCKaibvebHhTuZmnKISw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+  "tips" : "",
+  "title" : "关东煮"
+}, {
+  "description" : "毛巾卷并没有很难做，我觉得它基本就是卷起来的抹茶千层蛋糕，我今天做的毛巾卷还多了一味小可爱，那就是奶冻！冰凉的奶冻入口即化，给毛巾卷增加了另一种奇妙的口感。马上就要小长假了，小伙伴们也可以在家悠闲地尝试一下这个抹茶奶冻毛巾卷哦！",
+  "material" : [ {
+    "measureWord" : "ml",
+    "name" : "奶油",
+    "quantity" : 150
+  }, {
+    "measureWord" : "ml",
+    "name" : "牛奶",
+    "quantity" : 475
+  }, {
+    "measureWord" : "g",
+    "name" : "抹茶粉",
+    "quantity" : 10
+  }, {
+    "measureWord" : "g",
+    "name" : "吉利丁片",
+    "quantity" : 10
+  }, {
+    "measureWord" : "g",
+    "name" : "糖",
+    "quantity" : 85
+  }, {
+    "measureWord" : "g",
+    "name" : "低筋面粉",
+    "quantity" : 120
+  }, {
+    "measureWord" : "个",
+    "name" : "鸡蛋",
+    "quantity" : 2
+  }, {
+    "measureWord" : "g",
+    "name" : "黄油",
+    "quantity" : 25
+  }, {
+    "measureWord" : "ml",
+    "name" : "鲜奶油",
+    "quantity" : 300
+  }, {
+    "measureWord" : "ml",
+    "name" : "香草精",
+    "quantity" : 2
+  }, {
+    "measureWord" : "g",
+    "name" : "盐",
+    "quantity" : 5
+  }, {
+    "measureWord" : "ml",
+    "name" : "植物油",
+    "quantity" : 20
+  } ],
+  "receipeOrder" : 2,
+  "steps" : [ {
+    "description" : "牛奶加热后先加少量到抹茶粉中，拌匀后继续加入剩余的牛奶",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_gif/bgVDA4NYick2SyYRW4FyDYzoUlmic8uoFgHuibgKZyeia6mibsKAdrx1OUf0Py0zaOwCQ5ko5pPvclnTZuobiabyoXmA/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 1
+  }, {
+    "description" : "开火加热牛奶，并加入奶油和糖，再加入用冷水泡过又挤干水分的吉利丁片，关火，慢慢搅拌至吉利丁片完全融化",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick2SyYRW4FyDYzoUlmic8uoFgGhooUoqf9aDOvALDXvfnfRuZ355F7P0jPDEIjEEibibOSthnSHTzoZdA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 2
+  }, {
+    "description" : "将抹茶牛奶过筛，倒入一个事先抹过油的长方形的容器中，冷却后放入冰箱冷藏4个小时以上，让其完全凝固",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick2SyYRW4FyDYzoUlmic8uoFgsOEPZay8OU6mXscAl8KnULNAcR1ia1hbuia2GraoAqqiat7t6tCXT5hDA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 3
+  }, {
+    "description" : "将低筋面粉、抹茶粉、细砂糖和盐混合均匀",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick2SyYRW4FyDYzoUlmic8uoFgdrGn39H5EWutBZZkSVQFrpjeXjpfEYk7wDUhQvhcMhTmgicCdv8xibnw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 4
+  }, {
+    "description" : "碗中打入鸡蛋，用蛋抽把鸡蛋打散，加入牛奶拌匀",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick2SyYRW4FyDYzoUlmic8uoFgqwwI4A6bD87ibgdN2ZTNmRbB3bdMJPrtD9T6KbemicC7qebDukbmtL3g/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 5
+  }, {
+    "description" : "分几次把鸡蛋牛奶倒入面粉中，边倒边搅拌，再加入加热至完全融化的黄油，搅拌均匀",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick2SyYRW4FyDYzoUlmic8uoFgsG1b7FvNiaVdGZmWAwjCRGwjSMsQ377u9OlWNL5ecWv4UmsyAazzlbg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 6
+  }, {
+    "description" : "找一口平底不粘锅，开最小火预热一会儿，用小刷子先在锅底薄薄地刷上一层油，再舀入一大勺的面糊，倒入后立即摇晃锅子使面糊摊成均匀的圆形薄饼",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_gif/bgVDA4NYick2SyYRW4FyDYzoUlmic8uoFgQEZVaX7yAicWee9aibUTGX4ZVkWIibyjMR0U0KwRo9bdNPic13BicSzNWOw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 7
+  }, {
+    "description" : "往鲜奶油中倒入细砂糖和香草精，打发至奶油表面呈现很明显的纹路",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick2SyYRW4FyDYzoUlmic8uoFg64GStCAwABZIrGVnVlnGTZUmcLcibhCVjHjLrJpt4iahAzqvm6w4pOFg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 8
+  }, {
+    "description" : "将冷却的可丽饼一张一张叠起来，形成一个大长条，然后铺上打发奶油，用刮刀抹平，将可丽饼的圆边折进去",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_gif/bgVDA4NYick2SyYRW4FyDYzoUlmic8uoFguo0HNEZVjT9KKMdrZhkR8eovcrhl7ILUEDP3UjXpOMkzJOsuklNIuw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 9
+  }, {
+    "description" : "取出冰箱里的奶冻，切好，放在毛巾卷上，奶冻两头用饼皮包起来，然后卷卷卷",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick2SyYRW4FyDYzoUlmic8uoFgGdSiazNpTb9sCRicIMicGBSbibhwQZlgV0ibvjKic4XTylwmwygK0T5Xhkicg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 10
+  }, {
+    "description" : "卷好的毛巾卷包上保鲜膜，放入冰箱冷藏2-3小时，吃之前筛上抹茶粉，用锋利的刀切块",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_gif/bgVDA4NYick2SyYRW4FyDYzoUlmic8uoFg7K9ynAa8lh0zRqATSVI6EcgtVhn6Lcn53ZLzjvW6kEZJyugsoMf89Q/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 11
+  }, {
+    "description" : "可以开始吃了！",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_gif/bgVDA4NYick2SyYRW4FyDYzoUlmic8uoFgiagjY0ZSEibPS4RvKDSSBvicomaaD0dFmc2dUibJqYnfDBw2zMAicwKAohA/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 12
+  } ],
+  "thumbImage" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick2SyYRW4FyDYzoUlmic8uoFgX6ordtgBQmNKeicG6XOqlAkj8yuoA1oSAy5U4ibjbiawwWV7pPbXxC8vA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+  "tips" : "",
+  "title" : "抹茶奶冻毛巾卷"
+}, {
+  "description" : "这一杯光是看配色就非常的春天，我把抹茶的绿色和樱花的粉色放在了一起，看起来少女心满满，喝起来又像春天一样清新！咸咸的岩盐奶盖不会那么腻，抹茶拿铁可以自己调整甜度，喝起来口感清爽。总之这一杯真的很适合春日的午后喝，如果再配上一块抹茶奶冻毛巾卷，那就再好不过了~",
+  "material" : [ {
+    "measureWord" : "朵",
+    "name" : "盐渍樱花",
+    "quantity" : 1
+  }, {
+    "measureWord" : "g",
+    "name" : "岩盐",
+    "quantity" : 3
+  }, {
+    "measureWord" : "ml",
+    "name" : "开水",
+    "quantity" : 30
+  }, {
+    "measureWord" : "ml",
+    "name" : "牛奶",
+    "quantity" : 100
+  }, {
+    "measureWord" : "ml",
+    "name" : "淡奶油",
+    "quantity" : 100
+  }, {
+    "measureWord" : "g",
+    "name" : "抹茶粉",
+    "quantity" : 5
+  }, {
+    "measureWord" : "g",
+    "name" : "炼乳",
+    "quantity" : 10
+  }, {
+    "measureWord" : "g",
+    "name" : "红色色素",
+    "quantity" : 2
+  } ],
+  "receipeOrder" : 3,
+  "steps" : [ {
+    "description" : "将盐渍樱花泡在清水中备用",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick0KpKWgoO6WZribibG5vlI4wnRFhNAgWUbf03cKrldVoBaBibID20ic2A4qnh0wCrXiaXniasLNyUwGic9bg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 1
+  }, {
+    "description" : "将抹茶粉放在碗中，倒入开水，搅拌至抹茶粉完全溶解在水里",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick0KpKWgoO6WZribibG5vlI4wn3kB58cficLmBBAP87zV2WTNHiaOacwMHVibVQ8iafuhE94JcvTnoKAFh6g/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 2
+  }, {
+    "description" : "将打好的抹茶倒入牛奶中搅拌均匀，备用",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick0KpKWgoO6WZribibG5vlI4wnl9SOa5Inib7enIvbH39yALL8rlB9C3bmPbmwl0Uy2IbaPicCBXeTZUFg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 3
+  }, {
+    "description" : "在淡奶油中加入炼乳、岩盐和色素，打发至湿性发泡",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick2tNU5sMIn9w1t0go5npm0kVLHKXhzfsTlGYxMiaRbMZhHP7X5qtoa5jCr1CmmuFB8qUNtibC3hxjLA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 4
+  }, {
+    "description" : "打好的奶盖缓慢地倒在做好的抹茶拿铁上",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick0KpKWgoO6WZribibG5vlI4wnI7VHd6OJOJfn0pEh77e6dDWQt5JPAMJZIhxkd1H48jI9v9a9Q9fDzw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 5
+  }, {
+    "description" : "将泡好的盐渍樱花取出，擦干多余水分，放在奶盖上，就可以喝了",
+    "image" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick0KpKWgoO6WZribibG5vlI4wn4Voiasx2QqCgrH0CRZT1oFaTiaFRZve5xic1ZO6yrbnV8mhQeQutVhVPw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+    "order" : 6
+  } ],
+  "tags" : [ "饮品" ],
+  "thumbImage" : "https://mmbiz.qpic.cn/mmbiz_jpg/bgVDA4NYick0KpKWgoO6WZribibG5vlI4wn4Voiasx2QqCgrH0CRZT1oFaTiaFRZve5xic1ZO6yrbnV8mhQeQutVhVPw/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1",
+  "tips" : "",
+  "title" : "樱花岩盐奶盖抹茶拿铁"
+} ]

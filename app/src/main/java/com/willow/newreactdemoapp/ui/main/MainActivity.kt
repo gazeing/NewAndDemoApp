@@ -24,6 +24,6 @@ class MainActivity : AppCompatActivity() {
         viewModel.recipeListLiveData.observe(this, Observer {
             (recyclerView.adapter as? RecipeListAdapter)?.submitList(it)
         })
-        viewModel.getRecipeList()
+//        viewModel.getRecipeList()
     }
 }

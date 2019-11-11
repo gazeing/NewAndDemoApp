@@ -13,11 +13,11 @@ class ApiProvider {
 
     fun provideGson(): Gson = GsonBuilder().create()
 
-    fun createRecipeAPI(): RecipeAPI {
+    fun createRecipeAPI(url: String = baseUrl): RecipeAPI {
         return Retrofit.Builder()
 //            .client(client)
             .addConverterFactory(GsonConverterFactory.create(provideGson()))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .baseUrl(baseUrl).build().create(RecipeAPI::class.java)
+            .baseUrl(url).build().create(RecipeAPI::class.java)
     }
 }
