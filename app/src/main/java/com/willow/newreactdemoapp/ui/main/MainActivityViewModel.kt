@@ -12,13 +12,16 @@ import io.reactivex.schedulers.Schedulers
 
 class MainActivityViewModel(val repo: RecipeRepo) : ViewModel() {
 
-    val myRxStream: Flowable<List<RecipeItem>> =
-        getRecipeList().subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread()).toFlowable()
+//    val myRxStream: Flowable<List<RecipeItem>> =
+//        getRecipeList().subscribeOn(Schedulers.io())
+//            .observeOn(AndroidSchedulers.mainThread()).toFlowable()
 
 
     val recipeListLiveData: LiveData<List<RecipeItem>> =
-        LiveDataReactiveStreams.fromPublisher(myRxStream)
+        LiveDataReactiveStreams.fromPublisher(
+            getRecipeList().subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread()).toFlowable()
+        )
 //        get() = MutableLiveData<List<RecipeItem>>()
 
     fun getRecipeList() = repo.getRecipeList()

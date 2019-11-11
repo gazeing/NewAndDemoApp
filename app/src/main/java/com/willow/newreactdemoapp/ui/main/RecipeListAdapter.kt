@@ -10,9 +10,8 @@ import com.squareup.picasso.Picasso
 import com.willow.newreactdemoapp.R
 import com.willow.newreactdemoapp.model.RecipeItem
 import kotlinx.android.synthetic.main.viewholder_recipe.view.*
-import org.koin.android.ext.android.inject
 
-class RecipeListAdapter :
+class RecipeListAdapter(val picasso: Picasso) :
     ListAdapter<RecipeItem, RecipeListAdapter.ItemViewholder>(DiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewholder {
         return ItemViewholder(
@@ -22,13 +21,13 @@ class RecipeListAdapter :
     }
 
     override fun onBindViewHolder(holder: RecipeListAdapter.ItemViewholder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), picasso)
     }
 
     class ItemViewholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(item: RecipeItem) = with(itemView) {
+        fun bind(item: RecipeItem, picasso: Picasso) = with(itemView) {
             nameTextView.text = item.title
-            Picasso.get().load(item.thumbImage).into(itemImageView)
+            picasso.load(item.thumbImage).into(itemImageView)
         }
     }
 }
