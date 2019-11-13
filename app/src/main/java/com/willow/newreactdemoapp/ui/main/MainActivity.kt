@@ -11,13 +11,11 @@ import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
-
-    val picasso:Picasso by inject()
-    val viewModel by viewModel<MainActivityViewModel>()
+     val viewModel by viewModel<MainActivityViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        recyclerView.adapter = RecipeListAdapter(picasso)
+        recyclerView.adapter = RecipeListAdapter()
         val linearLayoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = linearLayoutManager
 

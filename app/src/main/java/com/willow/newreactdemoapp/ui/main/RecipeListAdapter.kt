@@ -10,25 +10,30 @@ import com.squareup.picasso.Picasso
 import com.willow.newreactdemoapp.R
 import com.willow.newreactdemoapp.model.RecipeItem
 import kotlinx.android.synthetic.main.viewholder_recipe.view.*
+import org.koin.core.KoinComponent
+import org.koin.core.inject
 
-class RecipeListAdapter(val picasso: Picasso) :
-    ListAdapter<RecipeItem, RecipeListAdapter.ItemViewholder>(DiffCallback()) {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewholder {
-        return ItemViewholder(
+class RecipeListAdapter :
+    ListAdapter<RecipeItem, RecyclerView.ViewHolder>(DiffCallback()) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
+        return ItemViewHolder(
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.viewholder_recipe, parent, false)
         )
     }
 
-    override fun onBindViewHolder(holder: RecipeListAdapter.ItemViewholder, position: Int) {
-        holder.bind(getItem(position), picasso)
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        (holder as? ItemViewHolder)?.bind(getItem(position))
     }
 
-    class ItemViewholder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(item: RecipeItem, picasso: Picasso) = with(itemView) {
-            nameTextView.text = item.title
-            picasso.load(item.thumbImage).into(itemImageView)
-        }
+
+}
+
+class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), KoinComponent {
+     val picasso by inject<Picasso>()
+    fun bind(item: RecipeItem) = with(itemView) {
+        nameTextView.text = item.title
+        picasso.load(item.thumbImage).into(itemImageView)
     }
 }
 
