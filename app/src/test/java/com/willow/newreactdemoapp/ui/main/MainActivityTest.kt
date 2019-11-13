@@ -30,7 +30,10 @@ class MainActivityTest : BaseTest() {
             single { Picasso.Builder(app.applicationContext).build() }
         }
 
-        mockHttpResponse("list_success.json", 200)
+        addDispatacher(
+            requestContains = "receipes.json?",
+            response = createMockHttpResponse("list_success.json", 200)
+        )
 
         app.loadModules(modules) {
             // Start mocking from here
