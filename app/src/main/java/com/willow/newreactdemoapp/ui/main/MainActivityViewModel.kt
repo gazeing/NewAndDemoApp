@@ -19,6 +19,6 @@ class MainActivityViewModel(val repo: RecipeRepo) : ViewModel() {
         }
 
     fun getRecipeList() {
-        requestLiveData.value = (requestLiveData.value ?: 0) + 1
+        requestLiveData.value = (requestLiveData.value ?: 0)
     }
 }
