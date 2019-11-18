@@ -1,1 +1,3 @@
-[![CircleCI](https://circleci.com/gh/gazeing/NewReactDemoApp/tree/master.svg?style=svg)](https://circleci.com/gh/gazeing/NewReactDemoApp/tree/master)
+### React Demo App
+
+[![CircleCI](https://circleci.com/gh/gazeing/NewReactDemoApp.svg?style=svg)](https://circleci.com/gh/gazeing/NewReactDemoApp)
