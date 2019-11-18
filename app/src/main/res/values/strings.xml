@@ -90,6 +90,7 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <string name="action_settings">Settings</string>
-    <string name="action_reload">Reload</string>
+    <string name="the_thump_image">The thump Image</string>
+    <string name="the_background_image">the background image</string>
+    <string name="the_refresh_button">the refresh button</string>
 </resources>

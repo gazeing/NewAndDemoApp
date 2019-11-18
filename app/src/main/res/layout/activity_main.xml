@@ -21,6 +21,7 @@
         android:id="@+id/refreshButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/the_refresh_button"
         android:layout_margin="48dp"
         android:src="@drawable/ic_refresh_black_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
