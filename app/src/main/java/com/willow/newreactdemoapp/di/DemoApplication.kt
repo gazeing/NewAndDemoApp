@@ -16,17 +16,29 @@ import org.koin.dsl.module
 class DemoApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        val dataModule = module {
-            single { ApiProvider().createRecipeAPI() }
-            single { RecipeRepo(get()) }
-            viewModel { MainActivityViewModel(get()) }
-            single { Picasso.get() }
-        }
+
 
         startKoin {
             if (BuildConfig.DEBUG) androidLogger() else EmptyLogger()
             androidContext(this@DemoApplication)
-            modules(listOf(dataModule))
+            modules(demoApp)
         }
     }
 }
+
+val dataModule = module {
+    single { ApiProvider().createRecipeAPI() }
+}
+
+val uiModule = module {
+    single { RecipeRepo(get()) }
+    viewModel { MainActivityViewModel(get()) }
+    single { Picasso.get() }
+}
+
+val rxModule = module {
+    // provided components
+    single { ApplicationSchedulerProvider() as SchedulerProvider }
+}
+
+val demoApp = listOf(dataModule, uiModule, rxModule)

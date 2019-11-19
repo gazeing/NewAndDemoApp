@@ -1,5 +1,7 @@
 package com.willow.newreactdemoapp
 
+import androidx.test.core.app.ApplicationProvider
+import com.willow.newreactdemoapp.di.KoinTestApp
 import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
@@ -9,6 +11,8 @@ import java.io.File
 
 open class BaseTest {
     lateinit var mockServer: MockWebServer
+
+    val app: KoinTestApp = ApplicationProvider.getApplicationContext()
 
     @Before
     open fun setUp() {

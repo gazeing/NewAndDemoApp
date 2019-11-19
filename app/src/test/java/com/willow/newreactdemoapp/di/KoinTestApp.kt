@@ -7,6 +7,7 @@ import org.koin.core.context.loadKoinModules
 import org.koin.core.context.startKoin
 import org.koin.core.context.unloadKoinModules
 import org.koin.core.module.Module
+import org.koin.dsl.module
 
 class KoinTestApp : Application() {
 
@@ -25,3 +26,4 @@ class KoinTestApp : Application() {
         unloadKoinModules(module)
     }
 }
+
