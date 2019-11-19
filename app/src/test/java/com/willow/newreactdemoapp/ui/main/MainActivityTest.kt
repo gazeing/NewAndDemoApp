@@ -6,8 +6,7 @@ import com.agoda.kakao.screen.Screen.Companion.onScreen
 import com.squareup.picasso.Picasso
 import com.willow.newreactdemoapp.BaseTest
 import com.willow.newreactdemoapp.data.RecipeRepo
-import com.willow.newreactdemoapp.di.ApiProvider
-import com.willow.newreactdemoapp.di.KoinTestApp
+import com.willow.newreactdemoapp.di.*
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -26,6 +25,7 @@ class MainActivityTest : BaseTest() {
             single { RecipeRepo(get()) }
             viewModel { MainActivityViewModel(get()) }
             single { Picasso.Builder(app.applicationContext).build() }
+            single { ApplicationSchedulerProvider() as SchedulerProvider }
         }
 
         addDispatacher(
