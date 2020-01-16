@@ -1,7 +1,6 @@
 package com.sonder.newdemoapp.data
 
 import com.sonder.newdemoapp.model.RecipeItem
-import io.reactivex.Single
 import retrofit2.http.GET
 
 interface RecipeAPI {
