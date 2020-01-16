@@ -12,20 +12,24 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
+import org.robolectric.annotation.LooperMode
 
 @RunWith(RobolectricTestRunner::class)
 @Config(application = KoinTestApp::class, sdk = [28])
+@LooperMode(LooperMode.Mode.PAUSED)
 class MainActivityTest : BaseTest() {
+
+    private val modules = module {
+        single { ApiProvider().createRecipeAPI(mockServer.url("/").toString()) }
+        single { RecipeRepo(get()) }
+        viewModel { MainActivityViewModel(get(), get()) }
+        single { Picasso.Builder(app.applicationContext).build() }
+        single { ApplicationDispatcherProvider() as DispatcherProvider }
+    }
 
     @Test
     fun testServiceStatus_isFetched() {
-        val modules = module {
-            single { ApiProvider().createRecipeAPI(mockServer.url("/").toString()) }
-            single { RecipeRepo(get()) }
-            viewModel { MainActivityViewModel(get()) }
-            single { Picasso.Builder(app.applicationContext).build() }
-            single { ApplicationSchedulerProvider() as SchedulerProvider }
-        }
+
 
         addDispatacher(
             requestContains = "receipes.json?",

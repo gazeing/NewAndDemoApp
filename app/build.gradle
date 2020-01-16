@@ -115,6 +115,8 @@ dependencies {
     testImplementation 'androidx.test:rules:1.2.0'
     testImplementation 'androidx.test:runner:1.2.0'
     testImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$corutines_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$corutines_version"
     testImplementation 'org.robolectric:robolectric:4.3'
     testImplementation "org.koin:koin-test:$koin_version"
     testImplementation 'com.agoda.kakao:kakao:2.1.0'

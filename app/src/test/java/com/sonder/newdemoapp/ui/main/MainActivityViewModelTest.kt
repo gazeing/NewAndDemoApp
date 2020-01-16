@@ -4,14 +4,21 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
+import com.sonder.newdemoapp.LiveDataTestUtil
+import com.sonder.newdemoapp.MainCoroutineRule
 import com.sonder.newdemoapp.data.RecipeAPI
 import com.sonder.newdemoapp.data.RecipeRepo
 import com.sonder.newdemoapp.di.DispatcherProvider
 import com.sonder.newdemoapp.di.TestDispatcherProvider
 import com.sonder.newdemoapp.di.uiModule
 import com.sonder.newdemoapp.model.RecipeItem
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.test.runBlockingTest
 import org.junit.After
 import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertNull
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -24,22 +31,18 @@ import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
 
-class MainActivityViewModelTest : KoinTest {
-    val viewModel: MainActivityViewModel by inject()
-    val repo: RecipeRepo by inject()
-
-    @Mock
-    lateinit var uiData: Observer<List<RecipeItem>>
+@ExperimentalCoroutinesApi
+class MainActivityViewModelTest {
+    private lateinit var viewModel: MainActivityViewModel
+    private lateinit var repo: RecipeRepo
+    private val dispatcherProvider: DispatcherProvider = TestDispatcherProvider()
 
 
     @get:Rule
+    var mainCoroutineRule = MainCoroutineRule()
+
+    @get:Rule
     val instantExecutorRule = InstantTaskExecutorRule()
-
-
-    val testCoroutineModule = module {
-        // provided components
-        single { TestDispatcherProvider() as DispatcherProvider }
-    }
 
     val testList = listOf(
         RecipeItem(
@@ -48,40 +51,30 @@ class MainActivityViewModelTest : KoinTest {
         )
     )
 
-    val mockApi: RecipeAPI = mock {
-        onBlocking { getItems() } doReturn testList
-    }
-
-
-    val testDataModule = module {
-        single { mockApi }
-    }
-
-    val testApp = listOf(testDataModule, uiModule, testCoroutineModule)
-
-
     @Before
-    fun before() {
-        MockitoAnnotations.initMocks(this)
-        startKoin { modules(testApp) }
+    fun setupViewModel() {
+        // We initialise the repository with no tasks
+        repo = mock {
+            onBlocking { getRecipeList() } doReturn testList
+
+        }
+
+        // Create class under test
+
     }
 
-    @After
-    fun after() {
-        stopKoin()
-    }
 
     @Test
-    fun testViewModelWorks() {
-
-
+    fun testViewModelWorks() = mainCoroutineRule.runBlockingTest {
+        viewModel = MainActivityViewModel(repo, dispatcherProvider)
+        pauseDispatcher()
         viewModel.getRecipeList()
+        assertNull(viewModel.recipeListLiveData.value)
+        resumeDispatcher()
+        assertNotNull(LiveDataTestUtil.getValue(viewModel.recipeListLiveData))
+        assert(LiveDataTestUtil.getValue(viewModel.recipeListLiveData).size ==1)
+        assert(LiveDataTestUtil.getValue(viewModel.recipeListLiveData)[0] == testList[0])
 
-        viewModel.recipeListLiveData.observeForever(uiData)
-
-        assertNotNull(viewModel.recipeListLiveData.value)
-
-        Mockito.verify(uiData).onChanged(testList)
     }
 
 

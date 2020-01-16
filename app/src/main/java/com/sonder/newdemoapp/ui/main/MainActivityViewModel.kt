@@ -17,7 +17,7 @@ class MainActivityViewModel(val repo: RecipeRepo,  val dp: DispatcherProvider) :
 
     val recipeListLiveData: LiveData<List<RecipeItem>> =
         requestLiveData.switchMap {
-            liveData(context = viewModelScope.coroutineContext + dp.io()) {
+            liveData(context = viewModelScope.coroutineContext) {
                 emit(repo.getRecipeList())
             }
 
