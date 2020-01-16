@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/NewReactDemoApp.iml" filepath="$PROJECT_DIR$/NewReactDemoApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/NewReactDemoApp-app.iml" filepath="$PROJECT_DIR$/app/NewReactDemoApp-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demos-NewReactDemoApp.iml" filepath="$PROJECT_DIR$/demos-NewReactDemoApp.iml" />
     </modules>
   </component>
 </project>
