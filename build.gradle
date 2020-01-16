@@ -1,15 +1,19 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.3.50'
-    ext.retrofit_version = '2.5.0'
-    ext.dagger2_version = "2.23.2"
-    ext.lifecycle_version = "2.1.0"
-    ext.versions_mockito = "2.25.0"
-    ext.versions_arch_core = "2.0.1"
-    ext.versions_mockwebserver = "3.8.1"
-    ext.nav_component_version = "2.1.0"
-    ext.koin_version = '2.0.1'
+    ext {
+        kotlin_version = '1.3.50'
+        retrofit_version = '2.5.0'
+        dagger2_version = "2.23.2"
+        lifecycle_version = "2.2.0-rc03"
+        versions_mockito = "2.25.0"
+        versions_arch_core = "2.0.1"
+        versions_mockwebserver = "3.8.1"
+        nav_component_version = "2.1.0"
+        kotlinMockitoVersion = '2.1.0'
+        corutines_version = '1.2.1'
+        koin_version = '2.0.1'
+    }
     repositories {
         google()
         jcenter()

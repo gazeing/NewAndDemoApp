@@ -2,13 +2,14 @@ package com.sonder.newdemoapp.ui.main
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
+import com.nhaarman.mockitokotlin2.doReturn
+import com.nhaarman.mockitokotlin2.mock
+import com.sonder.newdemoapp.data.RecipeAPI
 import com.sonder.newdemoapp.data.RecipeRepo
-import com.sonder.newdemoapp.di.*
+import com.sonder.newdemoapp.di.DispatcherProvider
+import com.sonder.newdemoapp.di.TestDispatcherProvider
+import com.sonder.newdemoapp.di.uiModule
 import com.sonder.newdemoapp.model.RecipeItem
-import okhttp3.mockwebserver.Dispatcher
-import okhttp3.mockwebserver.MockResponse
-import okhttp3.mockwebserver.MockWebServer
-import okhttp3.mockwebserver.RecordedRequest
 import org.junit.After
 import org.junit.Assert.assertNotNull
 import org.junit.Before
@@ -22,13 +23,10 @@ import org.koin.test.inject
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
-import java.io.File
 
 class MainActivityViewModelTest : KoinTest {
     val viewModel: MainActivityViewModel by inject()
     val repo: RecipeRepo by inject()
-
-    lateinit var mockServer: MockWebServer
 
     @Mock
     lateinit var uiData: Observer<List<RecipeItem>>
@@ -38,41 +36,44 @@ class MainActivityViewModelTest : KoinTest {
     val instantExecutorRule = InstantTaskExecutorRule()
 
 
-    val testRxModule = module {
+    val testCoroutineModule = module {
         // provided components
-        single { TestSchedulerProvider() as SchedulerProvider }
+        single { TestDispatcherProvider() as DispatcherProvider }
     }
+
+    val testList = listOf(
+        RecipeItem(
+            "testDes", listOf(), 1, listOf(), "url",
+            "testTips", "testTitle"
+        )
+    )
+
+    val mockApi: RecipeAPI = mock {
+        onBlocking { getItems() } doReturn testList
+    }
+
 
     val testDataModule = module {
-        single { ApiProvider().createRecipeAPI(mockServer.url("/").toString()) }
+        single { mockApi }
     }
 
-    val testApp = listOf(testDataModule, uiModule , testRxModule)
+    val testApp = listOf(testDataModule, uiModule, testCoroutineModule)
 
 
     @Before
     fun before() {
-        mockServer = MockWebServer()
-        mockServer.start()
         MockitoAnnotations.initMocks(this)
-        startKoin { modules( testApp) }
-
-        addDispatacher(
-            requestContains = "receipes.json?",
-            response = createMockHttpResponse("list_success.json", 200)
-        )
+        startKoin { modules(testApp) }
     }
 
     @After
     fun after() {
         stopKoin()
-        mockServer.shutdown()
     }
 
     @Test
     fun testViewModelWorks() {
 
-        val list = repo.getRecipeList().blockingGet()
 
         viewModel.getRecipeList()
 
@@ -80,37 +81,8 @@ class MainActivityViewModelTest : KoinTest {
 
         assertNotNull(viewModel.recipeListLiveData.value)
 
-        Mockito.verify(uiData).onChanged(list)
+        Mockito.verify(uiData).onChanged(testList)
     }
 
-    open fun enqueueMockHttpResponse(fileName: String, responseCode: Int) = mockServer.enqueue(
-        MockResponse()
-            .setResponseCode(responseCode)
-            .setBody(getJson(fileName))
-    )
-
-    fun createMockHttpResponse(fileName: String, responseCode: Int) = MockResponse()
-        .setResponseCode(responseCode)
-        .setBody(getJson(fileName))
-
-    fun addDispatacher(requestContains: String, response: MockResponse) {
-        mockServer.setDispatcher(object : Dispatcher() {
-            override fun dispatch(request: RecordedRequest?): MockResponse {
-                return if (request?.path?.contains(requestContains, true) == true) {
-                    response
-                } else
-                    MockResponse().setResponseCode(404)
-            }
-        })
-    }
-
-    private fun getJson(path: String): String {
-        val uri = this.javaClass.classLoader?.getResource(path)
-        uri?.let {
-            val file = File(it.path)
-            return String(file.readBytes())
-        }
-        return ""
-    }
 
 }

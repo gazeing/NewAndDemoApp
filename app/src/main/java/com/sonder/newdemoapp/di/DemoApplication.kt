@@ -1,10 +1,10 @@
 package com.sonder.newdemoapp.di
 
 import android.app.Application
-import com.squareup.picasso.Picasso
 import com.sonder.newdemoapp.BuildConfig
 import com.sonder.newdemoapp.data.RecipeRepo
 import com.sonder.newdemoapp.ui.main.MainActivityViewModel
+import com.squareup.picasso.Picasso
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -31,13 +31,13 @@ val dataModule = module {
 
 val uiModule = module {
     single { RecipeRepo(get()) }
-    viewModel { MainActivityViewModel(get()) }
+    viewModel { MainActivityViewModel(get(), get()) }
     single { Picasso.get() }
 }
 
-val rxModule = module {
+val coroutineModule = module {
     // provided components
-    single { ApplicationSchedulerProvider() as SchedulerProvider }
+    single { ApplicationDispatcherProvider() as DispatcherProvider }
 }
 
-val demoApp = listOf(dataModule, uiModule, rxModule)
+val demoApp = listOf(dataModule, uiModule, coroutineModule)

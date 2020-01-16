@@ -9,5 +9,5 @@ interface RecipeAPI {
     //get recipes
     //https://spending-7dc19.firebaseio.com/receipes.json?orderBy="receipeOrder"&limitToFirst=5&print=pretty
     @GET("receipes.json?orderBy=\"receipeOrder\"&limitToFirst=5&print=pretty")
-    fun getItems(): Single<List<RecipeItem>>
+    suspend fun getItems(): List<RecipeItem>
 }
