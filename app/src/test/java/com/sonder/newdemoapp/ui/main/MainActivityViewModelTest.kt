@@ -44,7 +44,7 @@ class MainActivityViewModelTest {
     @get:Rule
     val instantExecutorRule = InstantTaskExecutorRule()
 
-    val testList = listOf(
+    private val testList = listOf(
         RecipeItem(
             "testDes", listOf(), 1, listOf(), "url",
             "testTips", "testTitle"
@@ -52,15 +52,12 @@ class MainActivityViewModelTest {
     )
 
     @Before
-    fun setupViewModel() {
+    fun setupRepo() {
         // We initialise the repository with no tasks
         repo = mock {
             onBlocking { getRecipeList() } doReturn testList
 
         }
-
-        // Create class under test
-
     }
 
 
@@ -72,8 +69,8 @@ class MainActivityViewModelTest {
         assertNull(viewModel.recipeListLiveData.value)
         resumeDispatcher()
         assertNotNull(LiveDataTestUtil.getValue(viewModel.recipeListLiveData))
-        assert(LiveDataTestUtil.getValue(viewModel.recipeListLiveData).size ==1)
-        assert(LiveDataTestUtil.getValue(viewModel.recipeListLiveData)[0] == testList[0])
+        assert(LiveDataTestUtil.getValue(viewModel.recipeListLiveData).getOrNull()?.size ==1)
+        assert(LiveDataTestUtil.getValue(viewModel.recipeListLiveData).getOrNull()?.get(0) == testList[0])
 
     }
 

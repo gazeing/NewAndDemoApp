@@ -1,7 +1,8 @@
 package com.sonder.newdemoapp.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sonder.newdemoapp.R
@@ -18,7 +19,15 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = linearLayoutManager
 
         viewModel.recipeListLiveData.observe(this, Observer {
-            (recyclerView.adapter as? RecipeListAdapter)?.submitList(it)
+            if (it.isSuccess) {
+                (recyclerView.adapter as? RecipeListAdapter)?.submitList(it.getOrDefault(listOf()))
+            } else {
+                Toast.makeText(
+                    this@MainActivity,
+                    it.exceptionOrNull()?.message ?: "Something wrong",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         })
         viewModel.getRecipeList()
 

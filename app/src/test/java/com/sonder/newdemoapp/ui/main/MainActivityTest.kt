@@ -29,8 +29,6 @@ class MainActivityTest : BaseTest() {
 
     @Test
     fun testServiceStatus_isFetched() {
-
-
         addDispatacher(
             requestContains = "receipes.json?",
             response = createMockHttpResponse("list_success.json", 200)

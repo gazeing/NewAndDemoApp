@@ -12,6 +12,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.security.KeyManagementException
 import java.security.NoSuchAlgorithmException
 import java.util.concurrent.TimeUnit
+import javax.net.ssl.X509ExtendedTrustManager
+import javax.net.ssl.X509TrustManager
 
 const val baseUrl = "https://spending-7dc19.firebaseio.com/"
 const val TIMEOUT_REQUEST: Long = 30
@@ -35,12 +37,12 @@ class ApiProvider {
             .addNetworkInterceptor(logger)
         try {
             builder
-                .sslSocketFactory(TLSSocketFactory())
+                .sslSocketFactory(TLSSocketFactory(), BlindTrustManager())
 
         } catch (e: KeyManagementException) {
-            Log.e("HTTP",e.message)
+            Log.e("HTTP", e.message)
         } catch (e: NoSuchAlgorithmException) {
-            Log.e("HTTP",e.message)
+            Log.e("HTTP", e.message)
         }
 
         return builder.build()

@@ -5,20 +5,24 @@ import com.sonder.newdemoapp.data.RecipeRepo
 import com.sonder.newdemoapp.di.DispatcherProvider
 import com.sonder.newdemoapp.model.RecipeItem
 import com.sonder.newdemoapp.switchMap
-import kotlinx.coroutines.Dispatchers
-import okhttp3.Dispatcher
 import org.koin.core.KoinComponent
-import org.koin.core.inject
 
-class MainActivityViewModel(val repo: RecipeRepo,  val dp: DispatcherProvider) : ViewModel(),KoinComponent {
-
+class MainActivityViewModel(val repo: RecipeRepo, val dp: DispatcherProvider) : ViewModel(),
+    KoinComponent {
 
     private val requestLiveData = MutableLiveData<Int>()
 
-    val recipeListLiveData: LiveData<List<RecipeItem>> =
+
+    val recipeListLiveData: LiveData<Result<List<RecipeItem>>> =
         requestLiveData.switchMap {
             liveData(context = viewModelScope.coroutineContext) {
-                emit(repo.getRecipeList())
+                try {
+                    val data = repo.getRecipeList()
+                    emit(Result.success(data))
+                } catch (e: Exception) {
+                    emit(Result.failure(e))
+                }
+
             }
 
         }
