@@ -2,12 +2,11 @@ package com.sonder.newdemoapp.ui.main
 
 import androidx.lifecycle.*
 import com.sonder.newdemoapp.data.RecipeRepo
-import com.sonder.newdemoapp.di.DispatcherProvider
 import com.sonder.newdemoapp.model.RecipeItem
 import com.sonder.newdemoapp.switchMap
 import org.koin.core.KoinComponent
 
-class MainActivityViewModel(val repo: RecipeRepo, val dp: DispatcherProvider) : ViewModel(),
+class MainActivityViewModel(val repo: RecipeRepo) : ViewModel(),
     KoinComponent {
 
     private val requestLiveData = MutableLiveData<Int>()

@@ -31,7 +31,7 @@ val dataModule = module {
 
 val uiModule = module {
     single { RecipeRepo(get()) }
-    viewModel { MainActivityViewModel(get(), get()) }
+    viewModel { MainActivityViewModel(get()) }
     single { Picasso.get() }
 }
 

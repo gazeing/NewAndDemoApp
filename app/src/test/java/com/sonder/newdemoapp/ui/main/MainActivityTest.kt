@@ -22,7 +22,7 @@ class MainActivityTest : BaseTest() {
     private val modules = module {
         single { ApiProvider().createRecipeAPI(mockServer.url("/").toString()) }
         single { RecipeRepo(get()) }
-        viewModel { MainActivityViewModel(get(), get()) }
+        viewModel { MainActivityViewModel(get()) }
         single { Picasso.Builder(app.applicationContext).build() }
         single { ApplicationDispatcherProvider() as DispatcherProvider }
     }
