@@ -6,20 +6,34 @@ import com.nhaarman.mockitokotlin2.mock
 import com.sonder.newdemoapp.LiveDataTestUtil
 import com.sonder.newdemoapp.MainCoroutineRule
 import com.sonder.newdemoapp.data.RecipeRepo
+import com.sonder.newdemoapp.di.coroutineModule
+import com.sonder.newdemoapp.di.uiModule
 import com.sonder.newdemoapp.model.RecipeItem
+import io.reactivex.schedulers.Schedulers
+import io.reactivex.schedulers.Schedulers.single
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
+import org.junit.After
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.core.context.startKoin
+import org.koin.core.context.stopKoin
+import org.koin.dsl.module
+import org.koin.test.KoinTest
+import org.koin.test.get
+import org.koin.test.inject
+import org.mockito.MockitoAnnotations
+import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
-class MainActivityViewModelTest {
-    private lateinit var viewModel: MainActivityViewModel
-    private lateinit var repo: RecipeRepo
-
+class MainActivityViewModelKoinTest : KoinTest {
+    val viewModel: MainActivityViewModel by inject()
 
     @get:Rule
     var mainCoroutineRule = MainCoroutineRule()
@@ -34,18 +48,31 @@ class MainActivityViewModelTest {
         )
     )
 
+    val testRepo = module {
+        single<RecipeRepo> {
+            mock {
+                onBlocking { getRecipeList() } doReturn testList
+            }
+        }
+        viewModel { MainActivityViewModel(get()) }
+    }
+
+    val testApp = listOf(testRepo, coroutineModule)
+
     @Before
     fun setupRepo() {
-        // We initialise the repository with no tasks
-        repo = mock {
-            onBlocking { getRecipeList() } doReturn testList
-        }
+        MockitoAnnotations.initMocks(this)
+        startKoin { modules(testApp) }
+    }
+
+    @After
+    fun after() {
+        stopKoin()
     }
 
 
     @Test
     fun testViewModelWorks() = mainCoroutineRule.runBlockingTest {
-        viewModel = MainActivityViewModel(repo)
         pauseDispatcher()
         viewModel.getRecipeList()
         assertNull(viewModel.recipeListLiveData.value)

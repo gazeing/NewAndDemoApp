@@ -9,6 +9,7 @@ import com.sonder.newdemoapp.di.*
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.core.context.stopKoin
 import org.koin.dsl.module
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
@@ -43,6 +44,25 @@ class MainActivityTest : BaseTest() {
                         isVisible()
                         title { hasText("关东煮") }
                     }
+                }
+            }
+        }
+    }
+
+    @Test
+    fun testServerError_isHandled() {
+        addDispatacher(
+            requestContains = "receipes.json?",
+            response = createMockHttpResponse("list_error.json", 500)
+        )
+
+        app.loadModules(modules) {
+            // Start mocking from here
+            ActivityScenario.launch(MainActivity::class.java)
+            onScreen<MainScreen> {
+                toast {
+                    isVisible()
+                    text.containsText("500")
                 }
             }
         }

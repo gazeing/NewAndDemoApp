@@ -1,10 +1,10 @@
 package com.sonder.newdemoapp.ui.main
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.sonder.newdemoapp.R
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -22,10 +22,10 @@ class MainActivity : AppCompatActivity() {
             if (it.isSuccess) {
                 (recyclerView.adapter as? RecipeListAdapter)?.submitList(it.getOrDefault(listOf()))
             } else {
-                Toast.makeText(
-                    this@MainActivity,
+                Snackbar.make(
+                    recyclerView,
                     it.exceptionOrNull()?.message ?: "Something wrong",
-                    Toast.LENGTH_SHORT
+                    Snackbar.LENGTH_LONG
                 ).show()
             }
         })
