@@ -10,15 +10,13 @@ import com.squareup.picasso.Picasso
 import com.sonder.newdemoapp.R
 import com.sonder.newdemoapp.model.RecipeItem
 import kotlinx.android.synthetic.main.viewholder_recipe.view.*
-import org.koin.core.KoinComponent
-import org.koin.core.inject
 
-class RecipeListAdapter :
+class RecipeListAdapter(val picasso: Picasso) :
     ListAdapter<RecipeItem, RecyclerView.ViewHolder>(DiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         return ItemViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.viewholder_recipe, parent, false)
+                .inflate(R.layout.viewholder_recipe, parent, false), picasso
         )
     }
 
@@ -29,8 +27,7 @@ class RecipeListAdapter :
 
 }
 
-class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), KoinComponent {
-     val picasso by inject<Picasso>()
+class ItemViewHolder(itemView: View, val picasso: Picasso) : RecyclerView.ViewHolder(itemView) {
     fun bind(item: RecipeItem) = with(itemView) {
         nameTextView.text = item.title
         picasso.load(item.thumbImage).into(itemImageView)

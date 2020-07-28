@@ -1,7 +1,5 @@
 package com.sonder.newdemoapp.di
 
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import kotlinx.coroutines.Dispatchers
 
 /**

@@ -1,5 +1,7 @@
 package com.sonder.newdemoapp.data
 
-class RecipeRepo(val api: RecipeAPI) {
+import javax.inject.Inject
+
+class RecipeRepo @Inject constructor(val api: RecipeAPI) {
     suspend fun getRecipeList() = api.getItems()
 }

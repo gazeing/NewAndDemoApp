@@ -1,13 +1,12 @@
 package com.sonder.newdemoapp.ui.main
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import com.sonder.newdemoapp.data.RecipeRepo
 import com.sonder.newdemoapp.model.RecipeItem
 import com.sonder.newdemoapp.switchMap
-import org.koin.core.KoinComponent
 
-class MainActivityViewModel(val repo: RecipeRepo) : ViewModel(),
-    KoinComponent {
+class MainActivityViewModel @ViewModelInject constructor(val repo: RecipeRepo) : ViewModel() {
 
     private val requestLiveData = MutableLiveData<Int>()
 

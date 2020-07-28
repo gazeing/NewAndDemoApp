@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'kotlin-android-extensions'
 
 android {
@@ -36,6 +37,9 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
     testOptions {
@@ -74,10 +78,15 @@ dependencies {
     //picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
 
+    //hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_androidx_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+//    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
     implementation 'com.squareup.okhttp3:logging-interceptor:3.14.2'
 
 //    //dagger
@@ -88,19 +97,19 @@ dependencies {
 //    // if you use the support libraries
 //    kapt "com.google.dagger:dagger-android-processor:$dagger2_version"
 
-    // Koin for Android
-    implementation "org.koin:koin-android:$koin_version"
-    // Koin AndroidX Scope features
-    implementation "org.koin:koin-androidx-scope:$koin_version"
-    // Koin AndroidX ViewModel features
-    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
-    // Koin AndroidX Experimental features
-    implementation "org.koin:koin-androidx-ext:$koin_version"
+//    // Koin for Android
+//    implementation "org.koin:koin-android:$koin_version"
+//    // Koin AndroidX Scope features
+//    implementation "org.koin:koin-androidx-scope:$koin_version"
+//    // Koin AndroidX ViewModel features
+//    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+//    // Koin AndroidX Experimental features
+//    implementation "org.koin:koin-androidx-ext:$koin_version"
 
     // RXJAVA2
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.11'
-    implementation "io.reactivex.rxjava2:rxkotlin:2.4.0"
+//    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+//    implementation 'io.reactivex.rxjava2:rxjava:2.2.11'
+//    implementation "io.reactivex.rxjava2:rxkotlin:2.4.0"
 
 
     //test stuffs

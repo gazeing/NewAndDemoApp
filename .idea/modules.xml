@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DemoApp.iml" filepath="$PROJECT_DIR$/DemoApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/NewAndDemoApp.iml" filepath="$PROJECT_DIR$/.idea/modules/NewAndDemoApp.iml" group="NewAndDemoApp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/NewAndDemoApp-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/NewAndDemoApp-app.iml" group="NewAndDemoApp/app" />
       <module fileurl="file://$PROJECT_DIR$/NewReactDemoApp-DemoApp.iml" filepath="$PROJECT_DIR$/NewReactDemoApp-DemoApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
